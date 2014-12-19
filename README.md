@@ -1,4 +1,8 @@
-JavascriptApiAdapter
+jquery.api-adapter
 ====================
 
-Javascript adapter library for accessing APIs
+jQuery plugin to access API data from webservices.
+
+# Dependencies
+
+jquery.request
