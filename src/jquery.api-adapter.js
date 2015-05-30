@@ -1,8 +1,6 @@
 (function (factory) {
     'use strict';
-
 	factory(window.jQuery);
-
 }(function (jQuery) {
     'use strict';
 
@@ -18,7 +16,7 @@
 		return Api.domain;
 	};
 	Api.extraParams = {};
-	Api.domain = null;
+	Api.domain = window.location.protocol+"//"+window.location.host;
 
 	// Private variables
 	var routes = {},
@@ -26,18 +24,11 @@
 	defaultDataType = "json";
 
 	function get_request(args) {
-		var defer = jQuery.Deferred();
-
-		jQuery.Request(args).then(
+		return jQuery.Request(args).then(
 			function(result) {
-				defer.resolve(result.response);
-			},
-			function(result) {
-				defer.reject(result);
+				return ((result.response)? result.response : result);
 			}
 		);
-
-		return defer;
 	}
 
 	function build_url(base, data) {
@@ -49,7 +40,7 @@
 			$data = jQuery(data)
 			$data.wrap("<form></form>");
 
-			var $form = $data.parent(),
+			var $form = $data.parent();
 			data = $form.serializeObject();
 			$data.unwrap();
 
