@@ -1,8 +1,6 @@
 {
   "name": "jquery.api-adapter",
-  "main": [
-    "dist/jquery.api-adapter.js"
-  ],
+  "main": "dist/jquery.api-adapter.js",
   "version": "0.0.1",
   "homepage": "https://github.com/butchmarshall/jquery.api-adapter",
   "authors": [
