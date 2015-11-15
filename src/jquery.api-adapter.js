@@ -211,6 +211,7 @@
 				url: uri,
 				type: route.type,
 				cors: route.cors,
+				processData: route.processData,
 				data: data,
 				dataType: defaultDataType
 			});
@@ -286,6 +287,7 @@
 		args.before_send = ((typeof(args.before_send) != "function") ? function(data) { return data; } : args.before_send);
 		args.filter_response = ((typeof(args.filter_response) != "function") ? function(response) { return jQuery.Deferred().resolve(response); } : args.filter_response);
 		args.cors = ((typeof(args.cors) != "boolean") ? true : args.cors);
+		args.processData = ((typeof(args.processData) != "boolean") ? true : args.processData);
 
 		if (routes[route_name]) {
 			Api.logger("warn", "Overwriting already defined route", route_name);
