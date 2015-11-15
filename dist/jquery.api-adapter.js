@@ -216,14 +216,11 @@
         data  = route.before_send(data);
 
 		if (!request_cache[route_name][cache_key] || no_cache) {
-			request_cache[route_name][cache_key] = get_request({
+			request_cache[route_name][cache_key] = get_request(jQuery.extend({}, route, {
 				url: uri,
-				type: route.type,
-				cors: route.cors,
-				processData: route.processData,
 				data: data,
 				dataType: defaultDataType
-			});
+			}));
 		}
 
 		// Fire any callbacks added to the route
