@@ -136,7 +136,7 @@
 	// Returns an in progress or finished request, or executes a new request if never executed before
 	function to_route_request(route_name, orig_parts, data, args) {
 		var parts = orig_parts, route = routes[route_name], uri = null,
-		no_cache = ((typeof(args) === "boolean")? args : false);
+		no_cache = ((typeof(args) === "boolean")? args : args.no_cache);
 		args = ((typeof(args) != "object")? {} : args);
 
 		if (typeof(parts) == "string") {
