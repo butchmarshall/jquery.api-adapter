@@ -1,7 +1,4 @@
-(function (factory) {
-    'use strict';
-	factory(window.jQuery);
-}(function (jQuery) {
+(function (jQuery) {
     'use strict';
 
 	function isDOMElement(o){
@@ -375,4 +372,6 @@
 	}
 
 	jQuery.Api = Api;
-}));
+
+	return Api;
+})(jQuery);

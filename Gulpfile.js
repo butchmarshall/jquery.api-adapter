@@ -22,7 +22,10 @@ gulp.task('minify', function() {
 		dependencies: function() {
 			return [
 				{
-					name: 'jquery'
+					name: 'jQuery',
+					cjs: 'jquery',
+					amd: 'jquery',
+					global: 'jQuery'
 				}
 			]
 		},
@@ -30,7 +33,7 @@ gulp.task('minify', function() {
 			return 'jQuery.Api';
 		},
 		namespace: function() {
-			return 'jQuery.Api';
+			return 'jQuery';
 		}
 	}))
 	.pipe(gulp.dest('./dist/'))
