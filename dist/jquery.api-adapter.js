@@ -1,12 +1,12 @@
 ;(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
-    define(['jquery'], factory);
+    define(['jquery', 'jquery.request'], factory);
   } else if (typeof exports === 'object') {
-    module.exports = factory(require('jquery'));
+    module.exports = factory(require('jquery'), require('jquery.request'));
   } else {
-    root.jQuery = factory(root.jQuery);
+    root.jQuery = factory(root.jQuery, root.jQuery.Request);
   }
-}(this, function(jQuery) {
+}(this, function(jQuery, Request) {
 (function (jQuery) {
     'use strict';
 

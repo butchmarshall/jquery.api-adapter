@@ -26,6 +26,13 @@ gulp.task('minify', function() {
 					cjs: 'jquery',
 					amd: 'jquery',
 					global: 'jQuery'
+				},
+				{
+					name: 'jquery-request',
+					cjs: 'jquery.request',
+					amd: 'jquery.request',
+					param: 'Request',
+					global: 'jQuery.Request'
 				}
 			]
 		},
